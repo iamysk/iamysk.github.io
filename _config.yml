@@ -21,11 +21,11 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "yk.png"
   name             : "Yogesh Kalakoti"
   pronouns         : # example: "she/her"  
   bio              : "Wenner-Gren Postdoctoral fellow"
-  location         : "Earth"
+  location         : "Linköping, Sweden"
   employer         : "Linköping University"
   uri              : # URL
   email            : "yogesh.kalakoti@liu.se" 
@@ -34,7 +34,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=4mrg7GsAAAAJ&hl=en"
   impactstory      : # URL
-  orcid            : "https://orcid.org/my-orcid?orcid=0000-0003-2192-7887"
+  orcid            : "https://orcid.org/0000-0003-2192-7887"
   pubmed           : # URL
   researchgate     : # URL
 
@@ -205,7 +205,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  research:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -251,10 +251,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _research
   - scope:
       path: ""
-      type: portfolio
+      type: research
     values:
       layout: single
       author_profile: true
