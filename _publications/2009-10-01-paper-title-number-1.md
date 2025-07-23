@@ -5,7 +5,7 @@ permalink: /publication/2021-01-01-deep-learning-multi-omics
 excerpt: 'This paper explores deep learning for integrating multi-omics data to predict survival and drug response in breast cancer.'
 date: 2021-01-01
 venue: 'BMC genomics'
-paperurl: ''
+paperurl: 'https://doi.org/10.1186/s12864-021-07524-2'
 citation: 'Malik, Vidhi, Kalakoti, Yogesh, Sundar, Durai. (2021). "Deep learning assisted multi-omics integration for survival and drug-response prediction in breast cancer." <i>BMC genomics</i>. 22(1), 214.'
 ---
 

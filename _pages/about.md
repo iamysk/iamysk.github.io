@@ -7,11 +7,14 @@ redirect_from:
   - /about.html
 ---
 
-I am a postdoctoral researcher in the [Bioinformatics division (BIOIN)](https://liu.se/en/organisation/liu/ifm/bioin) at [Linköping University, Sweden](https://liu.se/) under the supervison of Prof. Bjorn Wallner, who specializes in computational modelling of protein ensembles. Our research is at the junction of biology, statistics and machine learning. I am also funded by the Wenner-Gren foundation via my postodoctoral grant to work on investigating the conformational landscape of flexible protiens.
+I am a postdoctoral researcher in the [Bioinformatics Division (BIOIN)](https://liu.se/en/organisation/liu/ifm/bioin) at [Linköping University, Sweden](https://liu.se/), working under the supervision of [Prof. Björn Wallner](https://liu.se/en/employee/bjowa51), who specializes in computational modelling of protein ensembles. Our research lies at the intersection of **biology, statistics, and machine learning**.  
+I am supported by a postdoctoral fellowship from the **Wenner-Gren Foundation**, focusing on investigating the **conformational landscape of flexible proteins**.
 
-Previously, I obtained my doctorate from [Indian Institute of Techology Delhi, New Delhi](https://home.iitd.ac.in/) in 2023 unde rthe supervison of [Prof. Durai Sundar](https://web.iitd.ac.in/~sundar/index.html). My thesis was aimed at developing solutions that effectively integrate diverse biological datasets to aid prognosis modelling and drug discovery. I worked with NGS datasets of Lung adenorcinoma (LUAD) and Breast cancer (BRCA) to develop models in survival prediction. 
+Previously, I completed my doctorate at the [Indian Institute of Technology Delhi (IIT Delhi)](https://home.iitd.ac.in/) in 2023 under the supervision of [Prof. Durai Sundar](https://web.iitd.ac.in/~sundar/index.html).  
+My doctoral work focused on developing computational solutions that integrate diverse biological datasets to aid **prognosis modelling** and **drug discovery**, with applications to NGS datasets of **lung adenocarcinoma (LUAD)** and **breast cancer (BRCA)** for **survival prediction**.
 
+Before joining IIT Delhi, I earned my **Bachelor of Technology (B.Tech.) in Biotechnology** from **GB Pant University, Uttarakhand, India**.  
+My undergraduate research, under [Prof. Sanjeev Agarwal](https://gbpuat.ac.in/colleges/CBSH/D1/sanjeev_profile.html), focused on identifying and profiling the **antimicrobial effects of steroidal lactones** from *Withania somnifera*.
 
-Before joining IIT Delhi, I did my Batchelor's of Techology (B.Tech.) in Biotechnology from GB Pant University, Uttrakahnd, India. My project under the supervision of Prof. [Sanjeev Agarwal](https://gbpuat.ac.in/colleges/CBSH/D1/sanjeev_profile.html) was aimed to identification and profiling of the anti-microbial effected of steroidal lactones from Withania Somnifera. 
 
 Contact me at [yogesh] [dot] [kalakoti] @ liu [dot] se
