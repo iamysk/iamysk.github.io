@@ -18,3 +18,11 @@ My undergraduate research, under [Prof. Sanjeev Agarwal](https://gbpuat.ac.in/co
 
 
 Contact me at [yogesh] [dot] [kalakoti] @ liu [dot] se
+
+---
+
+<p align="left">
+  <img src="/images/logo_gbpuat.jpg" width="10%" />
+  <img src="/images/logo_iitd.jpg" width="10%" />
+  <img src="/images/logo_liu.png" width="30%" />
+</p>
