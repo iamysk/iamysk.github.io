@@ -729,3 +729,194 @@ body {
     }
   }
 }
+
+// --- Research Themes & Summary Grid (Publications Page) ---
+.research-summary-intro {
+  margin-bottom: 1.75rem;
+  
+  p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.research-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2.75rem;
+}
+
+.research-theme-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #cbd5e1;
+    transition: background 0.2s ease;
+  }
+
+  &--dynamics::before { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+  &--dti::before { background: linear-gradient(90deg, #059669, #10b981); }
+  &--omics::before { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+  &--annotation::before { background: linear-gradient(90deg, #d97706, #f59e0b); }
+
+  &:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.07), 0 3px 8px -2px rgba(0, 0, 0, 0.03);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.775rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+
+    &.blue { background: #eff6ff; color: #1d4ed8; border: 1px solid #dbeafe; }
+    &.green { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    &.purple { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+    &.amber { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+  }
+
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.35;
+    margin: 0 0 0.5rem;
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.55;
+    margin-bottom: 1rem !important;
+  }
+
+  &__findings {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #334155;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: -0.1rem;
+        font-size: 1.2rem;
+        color: #2563eb;
+        font-weight: bold;
+      }
+
+      strong {
+        color: #0f172a;
+      }
+    }
+  }
+
+  &__pubs {
+    padding-top: 0.85rem;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+
+    .label {
+      font-size: 0.725rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-right: 0.25rem;
+    }
+
+    .pub-tag {
+      font-size: 0.775rem;
+      font-weight: 500;
+      padding: 0.2rem 0.55rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.15s ease;
+
+      &:hover {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+        color: #1d4ed8;
+      }
+    }
+  }
+}
+
+.publications-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 2.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 1.45rem;
+  }
+
+  .count-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid #dbeafe;
+  }
+}
