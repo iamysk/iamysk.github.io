@@ -230,44 +230,78 @@ body {
 
 // --- Top Masthead Navbar ---
 .masthead {
-  height: 58px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  z-index: 100;
+  margin: 0;
+  padding: 0;
 
   &__inner-wrap {
     max-width: 1140px;
+    height: 100%;
     margin: 0 auto;
-    padding: 0.7rem 1.5rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
 
-  .site-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0f172a;
-    letter-spacing: -0.02em;
-    text-decoration: none;
+  &__brand {
+    display: flex;
+    align-items: center;
 
-    &:hover {
-      color: #2563eb;
+    .site-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.025em;
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: #2563eb;
+      }
     }
   }
 
-  .greedy-nav {
-    background: transparent;
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
 
-    a {
-      font-size: 0.9rem;
+  // Modern Navigation Menu
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.35rem;
+
+    &__item {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+
+    &__link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.925rem;
       font-weight: 500;
       color: #475569;
-      padding: 0.35rem 0.8rem;
       border-radius: 8px;
-      margin: 0 0.15rem;
       text-decoration: none;
       transition: all 0.15s ease;
 
@@ -275,7 +309,128 @@ body {
         background: #f1f5f9;
         color: #0f172a;
       }
+
+      &.is-active {
+        background: #eff6ff;
+        color: #2563eb;
+        font-weight: 600;
+      }
     }
+  }
+
+  // Modern Mobile Hamburger Toggle Button
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover, &:focus {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      outline: none;
+    }
+
+    &__bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #334155;
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    &.is-active {
+      .nav-toggle__bar:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .nav-toggle__bar:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle__bar:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Mobile Styles
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 1rem;
+      right: 1rem;
+      flex-direction: column;
+      align-items: stretch;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.5rem;
+      gap: 0.25rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+
+      &.is-open {
+        display: flex;
+        animation: navSlideDown 0.15s ease-out forwards;
+      }
+
+      &__item {
+        display: block;
+        width: 100%;
+      }
+
+      &__link {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        border-radius: 8px;
+
+        &:hover {
+          background: #f8fafc;
+          color: #2563eb;
+        }
+
+        &.is-active {
+          background: #eff6ff;
+          color: #2563eb;
+        }
+      }
+    }
+  }
+}
+
+// Fallback safeguard for legacy greedy-nav if ever rendered
+.greedy-nav {
+  background: transparent !important;
+  button {
+    display: none !important;
+  }
+}
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
