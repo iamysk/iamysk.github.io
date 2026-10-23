@@ -1,5 +1,8 @@
 # main links
 main:
+  - title: "Home"
+    url: /
+
   - title: "Publications"
     url: /publications/
 
@@ -9,11 +12,5 @@ main:
   - title: "CV"
     url: /cv/
 
-  # - title: "Teaching"
-  #   url: /teaching/
-
-  # - title: "Research"
-  #   url: /research/
-
-  # - title: "Blog Posts"
-  #   url: /year-archive/
+  - title: "Contact Me"
+    url: /contact/

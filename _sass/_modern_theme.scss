@@ -610,3 +610,122 @@ body {
     border-radius: 4px;
   }
 }
+
+// --- Contact Cards Grid ---
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.35rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.06), 0 2px 6px -2px rgba(0, 0, 0, 0.03);
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+
+    &.email {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    &.linkedin {
+      background: #eff6ff;
+      color: #0a66c2;
+    }
+
+    &.github {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    &.scholar {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    &.orcid {
+      background: #ecfdf5;
+      color: #059669;
+    }
+
+    &.twitter {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 0.25rem;
+    }
+  }
+
+  &__desc {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 0 0 0.5rem !important;
+    line-height: 1.4;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+  }
+
+  &__sub {
+    display: block;
+    font-size: 0.775rem;
+    color: #94a3b8;
+    margin-top: 0.35rem;
+
+    a {
+      color: #64748b;
+      text-decoration: none;
+
+      &:hover {
+        color: #2563eb;
+        text-decoration: underline;
+      }
+    }
+  }
+}
