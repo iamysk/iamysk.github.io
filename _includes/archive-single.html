@@ -26,40 +26,45 @@
       </div>
     {% endif %}
 
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+      {% if post.venue %}
+        <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px; letter-spacing: 0.01em;">{{ post.venue }}</span>
       {% endif %}
-    </h2>
-    
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
+      {% if post.date %}
+        <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 9999px;">{{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+      {% endif %}
+    </div>
 
-        {% if post.collection == 'teaching' %}
-          <p class="page__meta"> {{ post.type }}, <i>{{ post.venue }}</i> · {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          <p class="page__meta" style="margin-bottom: 0.4rem; color: #4b5563;"><strong><i>{{ post.venue }}</i></strong> · {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
+    <h3 class="archive__item-title" itemprop="headline" style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer" style="color: #0f172a; text-decoration: none;">{{ title }}</a>
+      {% elsif post.link %}
+        <a href="{{ post.link }}" style="color: #0f172a; text-decoration: none;">{{ title }}</a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" style="color: #0f172a; text-decoration: none;">{{ title }}</a>
+      {% endif %}
+    </h3>
+
+    {% if post.citation %}
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem; line-height: 1.45;">
+        {{ post.citation | replace: 'Kalakoti, Y.', '<strong>Kalakoti, Y.</strong>' | replace: 'Kalakoti, Yogesh', '<strong>Kalakoti, Yogesh</strong>' | replace: 'Yogesh Kalakoti', '<strong>Yogesh Kalakoti</strong>' }}
+      </p>
+    {% endif %}
 
     {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
+      <p class="archive__item-excerpt" itemprop="description" style="margin-top: 0.4rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: #334155; line-height: 1.55;">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>
     {% endif %}
     
-    {% if post.paperurl %}
-      <p style="margin-top: 0.5rem; margin-bottom: 0;">
-        <a href="{{ post.paperurl }}" class="btn btn--primary btn--small" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Paper / DOI</a>
-        <a href="{{ base_path }}{{ post.url }}" class="btn btn--inverse btn--small" rel="permalink"><i class="fas fa-info-circle" aria-hidden="true"></i> Details</a>
-      </p>
-    {% elsif post.citation %}
-      <p class="archive__item-citation" style="font-size: 0.85em; color: #6b7280;">{{ post.citation }}</p>
-    {% endif %}
+    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-top: 0.75rem;">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" class="pub-btn pub-btn--primary" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i> Paper / DOI
+        </a>
+      {% endif %}
+      <a href="{{ base_path }}{{ post.url }}" class="pub-btn pub-btn--secondary" rel="permalink">
+        <i class="fas fa-file-alt" aria-hidden="true"></i> Details
+      </a>
+    </div>
 
   </article>
 </div>

@@ -14,29 +14,38 @@
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
+    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+      {% if post.type %}
+        <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px;">{{ post.type }}</span>
+      {% endif %}
+      {% if post.date %}
+        <span style="background: #f1f5f9; color: #475569; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 9999px;">{{ post.date | date: '%B %Y' }}</span>
+      {% endif %}
+      {% if post.location %}
+        <span style="color: #64748b; font-size: 0.8rem; margin-left: auto;"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ post.location }}</span>
+      {% endif %}
+    </div>
+
+    <h3 class="archive__item-title" itemprop="headline" style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink" style="color: #0f172a; text-decoration: none;">{{ title }}</a>
+    </h3>
+
+    {% if post.venue %}
+      <p style="font-size: 0.875rem; color: #475569; margin-bottom: 0.75rem;">
+        <strong><i>{{ post.venue }}</i></strong>
+      </p>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <div style="margin: 0.75rem 0; overflow: hidden; border-radius: 8px;">
+        {{ post.excerpt | markdownify }}
       </div>
     {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+
+    <div style="margin-top: 0.75rem;">
+      <a href="{{ base_path }}{{ post.url }}" class="pub-btn pub-btn--secondary" rel="permalink">
+        <i class="fas fa-info-circle" aria-hidden="true"></i> Talk Overview & Summary
+      </a>
+    </div>
   </article>
 </div>
