@@ -89,10 +89,17 @@
   img {
     max-width: 175px;
     border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     @include breakpoint($large) {
-      padding: 5px;
+      padding: 4px;
       border: 1px solid $border-color;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      }
     }
   }
 }

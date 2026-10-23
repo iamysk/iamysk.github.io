@@ -15,7 +15,7 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
       text-decoration: underline;
@@ -58,8 +58,11 @@
 }
 
 .archive__item-excerpt {
-  margin-top: 0;
-  font-size: $type-size-6;
+  margin-top: 0.25em;
+  margin-bottom: 0.75em;
+  font-size: 0.925em;
+  line-height: 1.55;
+  color: #4b5563;
 
   & + p {
     text-indent: 0;
@@ -90,6 +93,14 @@
    ========================================================================== */
 
 .list__item {
+  margin-bottom: 2em;
+  padding-bottom: 1.75em;
+  border-bottom: 1px solid #f3f4f6;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
   @include breakpoint($medium) {
     padding-right: $right-sidebar-width-narrow;
   }

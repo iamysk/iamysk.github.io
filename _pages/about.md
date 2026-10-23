@@ -22,8 +22,8 @@ Contact me at [yogesh] [dot] [kalakoti] @ liu [dot] se
 
 ---
 
-<p align="left">
-  <img src="/images/logo_gbpuat.jpg" width="10%" />
-  <img src="/images/logo_iitd.jpg" width="10%" />
-  <img src="/images/logo_liu.png" width="30%" />
-</p>
+<div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-top: 2rem; padding: 1rem 0; border-top: 1px solid #e5e7eb;">
+  <img src="/images/logo_gbpuat.jpg" alt="GB Pant University" style="height: 48px; width: auto; object-fit: contain;" />
+  <img src="/images/logo_iitd.jpg" alt="IIT Delhi" style="height: 52px; width: auto; object-fit: contain;" />
+  <img src="/images/logo_liu.png" alt="Linköping University" style="height: 42px; width: auto; object-fit: contain;" />
+</div>
