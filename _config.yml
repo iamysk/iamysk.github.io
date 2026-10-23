@@ -24,9 +24,9 @@ author:
   avatar           : "yk.png"
   name             : "Yogesh Kalakoti"
   pronouns         : # example: "she/her"  
-  bio              : "Wenner-Gren Postdoctoral fellow"
-  location         : "Linköping, Sweden"
-  employer         : "Linköping University"
+  bio              : "Senior Machine Learning Scientist"
+  location         : # Location
+  employer         : "Elucidata"
   uri              : # URL
   email            : "yogesh.kalakoti@liu.se" 
 

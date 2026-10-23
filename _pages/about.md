@@ -7,8 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a postdoctoral researcher in the [Bioinformatics Division (BIOIN)](https://liu.se/en/organisation/liu/ifm/bioin) at [Linköping University, Sweden](https://liu.se/), working under the supervision of [Prof. Björn Wallner](https://liu.se/en/employee/bjowa51), who specializes in computational modelling of protein ensembles. Our research lies at the intersection of **biology, statistics, and machine learning**.  
-I am supported by a postdoctoral fellowship from the **Wenner-Gren Foundation**, focusing on investigating the **conformational landscape of flexible proteins**.
+I am a **Senior Machine Learning Scientist at [Elucidata](https://elucidata.io/)**, working at the intersection of **biology, machine learning, and drug discovery**.
+
+Previously, I was a postdoctoral researcher in the [Bioinformatics Division (BIOIN)](https://liu.se/en/organisation/liu/ifm/bioin) at [Linköping University, Sweden](https://liu.se/) under the supervision of [Prof. Björn Wallner](https://liu.se/en/employee/bjowa51). I was supported by a postdoctoral fellowship from the **Wenner-Gren Foundation**, investigating the **conformational landscape of flexible proteins** and developing tools like [AFsample2](https://github.com/iamysk/AFsample2).
 
 Previously, I completed my doctorate at the [Indian Institute of Technology Delhi (IIT Delhi)](https://home.iitd.ac.in/) in 2023 under the supervision of [Prof. Durai Sundar](https://web.iitd.ac.in/~sundar/index.html).  
 My doctoral work focused on developing computational solutions that integrate diverse biological datasets to aid **prognosis modelling** and **drug discovery**, with applications to NGS datasets of **lung adenocarcinoma (LUAD)** and **breast cancer (BRCA)** for **survival prediction**.
